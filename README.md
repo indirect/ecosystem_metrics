@@ -15,6 +15,7 @@ How to get ecosystem metrics from Fastly request logs:
 
 ### Ideas
 
+- Query for and parse user agents that are only RubyGems (they start `Ruby, RubyGems`)
 - Add timestamp to the user agent list to make it possible to generate time series graphs
 - Create a Redshift database to store the time series user agent data
 - Roll up data into hourly or maybe daily summaries, and store those in Redshift instead
