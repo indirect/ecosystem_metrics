@@ -20,16 +20,28 @@ input.each do |line|
   options = info.delete("options")
 
   options.split(",").each do |name|
-    agents["options"] ||= {}
-    agents["options"][name] ||= 0
+    agents["options"] ||= Hash.new(0)
     agents["options"][name] += 1
   end if options
 
   info.each do |name, value|
     next if value.nil?
-    agents[name] ||= {}
-    agents[name][value] ||= 0
+    agents[name] ||= Hash.new(0)
     agents[name][value] += 1
+  end
+end
+
+agents["platforms"] = Hash.new(0)
+agents["os"].each do |k, v|
+  case k
+  when /darwin/
+    agents["platforms"]["darwin"] += v
+  when /linux/
+    agents["platforms"]["linux"] += v
+  when /mswin|mingw/
+    agents["platforms"]["windows"] += v
+  when /bsd/
+    agents["platforms"]["bsd"] += v
   end
 end
 

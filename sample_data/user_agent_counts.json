@@ -589,5 +589,11 @@
     "AppEngine-Google; (+http://code.google.com/appengine; appid: s~sanrenfei2)": 18,
     "AppEngine-Google; (+http://code.google.com/appengine; appid: s~sanrenfei12)": 9,
     "AppEngine-Google; (+http://code.google.com/appengine; appid: s~sanrenfei7)": 1
+  },
+  "platforms": {
+    "linux": 108510,
+    "darwin": 2227,
+    "windows": 12273,
+    "bsd": 7
   }
 }
